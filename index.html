@@ -4,8 +4,146 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Snippet Gallery</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>Hello</h1>
+    <main class="gallery">
+      <header class="gallery__header">
+        <h2 class="gallery__title">Snippet Heading</h2>
+        <p class="gallery__description">
+          Lorem <em>ipsum</em> dolor sit amet,
+          <strong>consectetur</strong> adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad
+          <a href="#" class="gallery__link">minim</a> veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+        <h3 class="gallery__subheading">Links</h3>
+        <div class="gallery__links">
+          <button class="gallery__button gallery__button--primary">
+            Link One
+            <img
+              class="gallery__icon"
+              src="assets/icons/star-icon.svg"
+              alt=""
+              aria-hidden="true"
+            />
+          </button>
+          <button class="gallery__button gallery__button--secondary">
+            Link Two
+          </button>
+        </div>
+      </header>
+      <section class="gallery__grid">
+        <img
+          src="assets/images/robot-floating.png"
+          alt="Futuristic floating robot illustration"
+          class="gallery__image gallery__image--tall"
+          loading="lazy"
+        />
+        <img
+          src="assets/images/team-meeting.png"
+          alt="People gathered around a meeting table"
+          class="gallery__image gallery__image--tall"
+          loading="lazy"
+        />
+        <div
+          class="gallery__thumbnail"
+          aria-label="Video thumbnail, click to play"
+        >
+          <img
+            class="gallery__thumbnail-image"
+            src="./assets/images/video-thumbnail.png"
+            alt="Video thumbnail"
+          />
+          <button class="gallery__thumbnail-play" aria-label="Play video">
+            <img
+              class="gallery__icon"
+              src="assets/icons/play-icon.svg"
+              alt=""
+              aria-hidden="true"
+            />
+          </button>
+        </div>
+
+        <img
+          src="assets/images/city-sunset.png"
+          alt="City skyline during sunset with warm colors"
+          class="gallery__image gallery__image--wide"
+          loading="lazy"
+        />
+        <img
+          src="assets/images/woman-writing.png"
+          alt="Woman writing on whiteboard in glasses"
+          class="gallery__image gallery__image--tall"
+          loading="lazy"
+        />
+      </section>
+      <footer class="gallery__footer">
+        <small
+          ><strong>Media copyright</strong> - Lorem ipsum dolor sit amet.</small
+        >
+      </footer>
+    </main>
+    <div
+      class="modal"
+      id="videoModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+      hidden
+    >
+      <div
+        class="modal__content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+        tabindex="-1"
+      >
+        <div class="modal__header">
+          <h2 id="modalTitle" class="modal__heading">Modal Heading</h2>
+
+          <button class="modal__close" aria-label="Close modal" id="modalClose">
+            <img
+              class="modal__icon"
+              src="assets/icons/cancel-icon.svg"
+              alt=""
+              aria-hidden="true"
+              tabindex="-1"
+            />
+          </button>
+        </div>
+
+        <p class="modal__description">
+          Lorem <em>ipsum</em> dolor sit amet,
+          <strong>consectetur</strong> adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad
+          <a href="#" class="modal__link">minim</a> veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+
+        <div class="modal__video">
+          <iframe
+            src="https://www.youtube.com/embed/x6iyz1AQhuU?si=ku7_UR2fdiwmx1t_"
+            title="Introduction to SmartRecruiters video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <script type="module">
+      import { setupModal } from "./scripts/main.js";
+      setupModal();
+    </script>
   </body>
 </html>
