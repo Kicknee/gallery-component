@@ -1,0 +1,16 @@
+{
+  "name": "gallery-component",
+  "version": "1.0.0",
+  "description": "Smartrecruiters task",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass --watch styles:styles",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pawel Daniszewski",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.89.2",
+    "typescript": "^5.8.3"
+  }
+}
