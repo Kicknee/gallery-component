@@ -11,12 +11,12 @@ git clone https://github.com/Kicknee/gallery-component.git
 cd gallery-modal-accessibility
 
 *build css and js files*
-compile:sass
-compile:ts
+npm run compile:sass
+npm run compile:ts
 
 *run website on local severl *
-test
+npm run test
 
 *run unit tests"
-start
+npm run start
 ```
