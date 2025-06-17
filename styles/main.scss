@@ -213,6 +213,15 @@ body.no-scroll {
   &[hidden] {
     display: none;
   }
+
+  &__caption--hidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+  }
   &__content {
     max-height: 100vh;
     height: 100vh;
