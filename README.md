@@ -9,17 +9,29 @@ This project is a responsive, accessible image and video gallery built using **H
 ```bash
 git clone https://github.com/Kicknee/gallery-component.git
 cd gallery-modal-accessibility
+```
 
-*install required dependencies*
+### 2. Install required dependencies
+
+```bash
 npm install
+```
 
-*build css and js files*
+### 3. Build css and js files
+
+```bash
 npm run compile:sass
 npm run compile:ts
+```
 
-*run website on the local sever*
+### 4. Run website on the local server
+
+```bash
 npm run start
+```
 
-*run unit tests*
+### 5. Run unit tests
+
+```bash
 npm run test
 ```
