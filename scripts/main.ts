@@ -1,6 +1,7 @@
 export function setupModal() {
   const modal = document.getElementById("videoModal") as HTMLDivElement;
   const modalContent = document.querySelector(".modal__content");
+  const mainContent = document.querySelector("main") as HTMLElement;
   const openButton = document.querySelector(
     ".gallery__thumbnail-play"
   ) as HTMLButtonElement;
@@ -18,6 +19,9 @@ export function setupModal() {
     lastFocusedElement = document.activeElement as HTMLElement;
     document.body.classList.add("no-scroll");
 
+    // Hide main content from readers
+    mainContent.setAttribute("aria-hidden", "true");
+
     modal.removeAttribute("hidden");
     iframe.src = originalSrc + "&autoplay=1";
     closeButton.focus();
@@ -27,6 +31,9 @@ export function setupModal() {
   function closeModal(): void {
     modal.setAttribute("hidden", "true");
     document.body.classList.remove("no-scroll");
+
+    mainContent.removeAttribute("aria-hidden");
+
     iframe.src = "";
 
     //Restore focus to the play button
