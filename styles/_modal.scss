@@ -1,0 +1,70 @@
+@use "mixins" as m;
+@use "variables" as c;
+
+.modal {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background: #00000080;
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &[hidden] {
+    display: none;
+  }
+  &__content {
+    max-height: 100vh;
+    height: 100vh;
+    background: linear-gradient(180deg, #e9ece7 0%, #ffffff 100%);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    position: relative;
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+  }
+  &__close {
+    background: c.$danger;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    img {
+      width: 18px;
+      height: 24px;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 20px;
+  }
+  &__description {
+    @include m.paragraph;
+    margin-bottom: 20px;
+  }
+
+  &__link {
+    @include m.anchor;
+  }
+
+  &__video iframe {
+    width: 100%;
+    border-radius: 20px;
+    height: 60vh;
+  }
+}

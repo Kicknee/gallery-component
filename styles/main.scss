@@ -1,12 +1,9 @@
-//color variable
-$primary: #13304a;
-$secondary: #076d59;
-$tertiary: #37b971;
-$quatenary: #e9ece7;
-$black: #000000;
-$white: #ffffff;
-$content: #222222;
-$danger: #9f0000;
+@use "variables" as c;
+@use "mixins" as m;
+
+@use "base";
+@use "modal";
+@use "focus";
 
 $headings: (
   "h1": 48px,
@@ -25,60 +22,6 @@ $headings: (
   }
 }
 
-@mixin paragraph {
-  font-weight: 400;
-  font-size: 16px;
-  color: $content;
-  line-height: 140%;
-}
-
-@mixin anchor {
-  color: $secondary;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 140%;
-}
-
-@mixin btn-text {
-  font-family: "Inter", sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 140%;
-  letter-spacing: 0%;
-  color: $white;
-}
-@mixin button {
-  @include btn-text;
-  border-radius: 8px;
-  font-size: 16px;
-  gap: 8px;
-  border: none;
-  padding: 8px 24px;
-  cursor: pointer;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-body {
-  font-family: "Inter", sans-serif;
-  color: $black;
-  margin: 0;
-  height: 0;
-  padding: 0;
-  background: linear-gradient(180deg, #ffffff 0%, #e9ece7 100%);
-  background-size: cover;
-  background-attachment: fixed;
-}
-
-body.no-scroll {
-  overflow: hidden;
-  height: 100vh;
-}
 .gallery {
   padding: 25px;
   grid-template-columns: 1fr;
@@ -87,7 +30,7 @@ body.no-scroll {
     margin: 20px 0;
   }
   &__description {
-    @include paragraph;
+    @include m.paragraph;
   }
 
   &__subheading {
@@ -95,15 +38,15 @@ body.no-scroll {
   }
 
   &__link {
-    @include anchor;
+    @include m.anchor;
   }
   &__button {
-    @include button;
+    @include m.button;
     transition: background-color 0.2s ease-in-out;
 
     &:hover {
-      background-color: $quatenary;
-      color: $primary;
+      background-color: c.$quatenary;
+      color: c.$primary;
 
       .gallery__icon {
         content: url("/assets/icons/star-filled-icon.svg");
@@ -111,7 +54,7 @@ body.no-scroll {
     }
 
     &--primary {
-      background: $primary;
+      background: c.$primary;
       display: inline-flex;
       align-items: center;
       margin-right: 10px;
@@ -123,7 +66,7 @@ body.no-scroll {
       }
     }
     &--secondary {
-      background: $secondary;
+      background: c.$secondary;
     }
   }
 
@@ -164,7 +107,7 @@ body.no-scroll {
 
     &-play {
       position: absolute;
-      background-color: $primary;
+      background-color: c.$primary;
       border: none;
       width: 48px;
       height: 48px;
@@ -180,7 +123,7 @@ body.no-scroll {
         height: 24px;
       }
       &:hover {
-        background-color: $quatenary;
+        background-color: c.$quatenary;
 
         .gallery__icon {
           content: url("/assets/icons/play-filled-icon.svg");
@@ -195,81 +138,6 @@ body.no-scroll {
   &__footer {
     margin-top: 1rem;
   }
-}
-
-.modal {
-  z-index: 1000;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  min-height: 100vh;
-  background: #00000080;
-  backdrop-filter: blur(10px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  &[hidden] {
-    display: none;
-  }
-  &__content {
-    max-height: 100vh;
-    height: 100vh;
-    background: linear-gradient(180deg, #e9ece7 0%, #ffffff 100%);
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    position: relative;
-  }
-  &__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 70px;
-  }
-  &__close {
-    background: $danger;
-    border: none;
-    border-radius: 50%;
-    width: 48px;
-    height: 48px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-
-    img {
-      width: 18px;
-      height: 24px;
-    }
-  }
-
-  &__heading {
-    margin-bottom: 20px;
-  }
-  &__description {
-    @include paragraph;
-    margin-bottom: 20px;
-  }
-
-  &__link {
-    @include anchor;
-  }
-
-  &__video iframe {
-    width: 100%;
-    border-radius: 20px;
-    height: 60vh;
-  }
-}
-
-.gallery__button:focus-visible,
-.gallery__thumbnail-play:focus-visible,
-.modal__close:focus-visible {
-  outline: 3px solid $primary;
-  outline-offset: 4px;
 }
 
 @media (min-width: 769px) {

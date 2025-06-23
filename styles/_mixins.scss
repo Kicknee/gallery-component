@@ -1,0 +1,33 @@
+@use "variables" as c;
+
+@mixin paragraph {
+  font-weight: 400;
+  font-size: 16px;
+  color: c.$content;
+  line-height: 140%;
+}
+
+@mixin anchor {
+  color: c.$secondary;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+}
+
+@mixin btn-text {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  color: c.$white;
+}
+@mixin button {
+  @include btn-text;
+  border-radius: 8px;
+  font-size: 16px;
+  gap: 8px;
+  border: none;
+  padding: 8px 24px;
+  cursor: pointer;
+}
