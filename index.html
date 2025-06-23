@@ -41,27 +41,46 @@
         </div>
       </header>
       <section class="gallery__grid">
-        <img
-          src="assets/images/robot-floating.png"
-          alt="Futuristic floating robot illustration"
-          class="gallery__image gallery__image--tall"
-          loading="lazy"
-        />
-        <img
-          src="assets/images/team-meeting.png"
-          alt="People gathered around a meeting table"
-          class="gallery__image gallery__image--tall"
-          loading="lazy"
-        />
+        <picture>
+          <source
+            srcset="assets/images/robot-floating-small.png"
+            media="(max-width: 734px)"
+          />
+          <img
+            src="assets/images/robot-floating-medium.png"
+            alt="Futuristic floating robot illustration"
+            class="gallery__image gallery__image--tall"
+            loading="lazy"
+          />
+        </picture>
+        <picture>
+          <source
+            srcset="assets/images/team-meeting-small.png"
+            media="(max-width: 734px)"
+          />
+          <img
+            src="assets/images/team-meeting-medium.png"
+            alt="People gathered around a meeting table"
+            class="gallery__image gallery__image--tall"
+            loading="lazy"
+          />
+        </picture>
+
         <div
           class="gallery__thumbnail"
           aria-label="Video thumbnail, click to play"
         >
-          <img
-            class="gallery__thumbnail-image"
-            src="./assets/images/video-thumbnail.png"
-            alt="Video thumbnail"
-          />
+          <picture>
+            <source
+              srcset="./assets/images/video-thumbnail-small.png"
+              media="(max-width: 734px)"
+            />
+            <img
+              class="gallery__thumbnail-image"
+              src="./assets/images/video-thumbnail-medium.png"
+              alt="Video thumbnail"
+            />
+          </picture>
           <button class="gallery__thumbnail-play" aria-label="Play video">
             <img
               class="gallery__icon"
@@ -72,18 +91,30 @@
           </button>
         </div>
 
-        <img
-          src="assets/images/city-sunset.png"
-          alt="City skyline during sunset with warm colors"
-          class="gallery__image gallery__image--wide"
-          loading="lazy"
-        />
-        <img
-          src="assets/images/woman-writing.png"
-          alt="Woman writing on whiteboard in glasses"
-          class="gallery__image gallery__image--tall"
-          loading="lazy"
-        />
+        <picture>
+          <source
+            srcset="assets/images/city-sunset-small.png"
+            media="(max-width: 734px)"
+          />
+          <img
+            src="assets/images/city-sunset-medium.png"
+            alt="City skyline during sunset with warm colors"
+            class="gallery__image gallery__image--wide"
+            loading="lazy"
+          />
+        </picture>
+        <picture>
+          <source
+            srcset="assets/images//woman-writing-small.png"
+            media="(max-width: 734px)"
+          />
+          <img
+            src="assets/images/woman-writing-medium.png"
+            alt="Woman writing on whiteboard in glasses"
+            class="gallery__image gallery__image--tall"
+            loading="lazy"
+          />
+        </picture>
       </section>
       <footer class="gallery__footer">
         <small
