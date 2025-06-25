@@ -1,4 +1,4 @@
-@use "variables" as c;
+@use "variables" as *;
 
 *,
 *::before,
@@ -9,7 +9,7 @@
 }
 body {
   font-family: "Inter", sans-serif;
-  color: c.$black;
+  color: $black;
   margin: 0;
   height: 0;
   padding: 0;

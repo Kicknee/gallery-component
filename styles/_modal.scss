@@ -1,5 +1,5 @@
-@use "mixins" as m;
-@use "variables" as c;
+@use "mixins" as *;
+@use "variables" as *;
 
 .modal {
   z-index: 1000;
@@ -34,7 +34,7 @@
     height: 70px;
   }
   &__close {
-    background: c.$danger;
+    background: $danger;
     border: none;
     border-radius: 50%;
     width: 48px;
@@ -54,17 +54,43 @@
     margin-bottom: 20px;
   }
   &__description {
-    @include m.paragraph;
+    @include paragraph;
     margin-bottom: 20px;
   }
 
   &__link {
-    @include m.anchor;
+    @include anchor;
   }
 
   &__video iframe {
     width: 100%;
     border-radius: 20px;
     height: 60vh;
+  }
+}
+
+@media (min-width: 769px) {
+  .modal {
+    &__content {
+      width: 1000px;
+      height: 890px;
+      max-height: 85vh;
+      margin: 80px auto;
+      border-radius: 16px;
+      background-color: red;
+    }
+
+    &__description {
+      width: 800px;
+    }
+
+    &__video {
+      height: 80%;
+      max-height: 675px;
+    }
+    &__video iframe {
+      height: 100%;
+      max-height: 675px;
+    }
   }
 }

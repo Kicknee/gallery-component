@@ -1,14 +1,14 @@
-@use "variables" as c;
+@use "variables" as *;
 
 @mixin paragraph {
   font-weight: 400;
   font-size: 16px;
-  color: c.$content;
+  color: $content;
   line-height: 140%;
 }
 
 @mixin anchor {
-  color: c.$secondary;
+  color: $secondary;
   font-weight: 500;
   font-size: 16px;
   line-height: 140%;
@@ -20,7 +20,7 @@
   font-size: 16px;
   line-height: 140%;
   letter-spacing: 0%;
-  color: c.$white;
+  color: $white;
 }
 @mixin button {
   @include btn-text;
